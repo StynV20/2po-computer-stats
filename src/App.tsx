@@ -1,4 +1,5 @@
 import styles from "./App.module.scss";
+import Columns from "./components/Columns";
 import Platform from "react-platform-js";
 
 function App() {
@@ -7,21 +8,22 @@ function App() {
       <h1>II.0 Services Portal</h1>
 
       <h2>Operating System</h2>
+      <Columns
+        firstTitle="OS:"
+        firstValue={Platform.OS}
+        secondTitle="Version:"
+        secondValue={Platform.OSVersion}
+        thirdTitle="Bit-version:"
+        thirdValue="32 bit / 64 bit"
+      />
 
-      <div className={styles.columns}>
-        <div className={styles.singleColumn}>
-          <h4>OS:</h4>
-          <p>{Platform.OS}</p>
-        </div>
-        <div className={styles.singleColumn}>
-          <h4>Version:</h4>
-          <p>{Platform.OSVersion}</p>
-        </div>
-        <div className={styles.singleColumn}>
-          <h4>Bit-version:</h4>
-          <p>32 bit / 64 bit</p>
-        </div>
-      </div>
+      <h2>Web Browser</h2>
+      <Columns
+        firstTitle="Browser name:"
+        firstValue={Platform.Browser}
+        secondTitle="Version:"
+        secondValue={Platform.BrowserVersion}
+      />
     </main>
   );
 }

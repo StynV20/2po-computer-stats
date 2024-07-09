@@ -1,0 +1,65 @@
+.root {
+  main {
+    width: 100%;
+  }
+  width: 80vw;
+
+  margin: 0 100px;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font: darkmode-on-regular, sans-serif;
+  }
+
+  h1 {
+    font-size: 4.9rem;
+    line-height: 106%;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    .singleColumn {
+      @media (min-width: 768px) {
+        min-height: 200px;
+      }
+      flex: 1 1 calc(33.333% - 30px); /* Adjust the subtraction value to control spacing */
+      padding-left: 20px;
+      border-left: 1px solid black;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

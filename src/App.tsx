@@ -1,4 +1,5 @@
 import styles from "./App.module.scss";
+import Platform from "react-platform-js";
 
 function App() {
   return (
@@ -10,15 +11,15 @@ function App() {
       <div className={styles.columns}>
         <div className={styles.singleColumn}>
           <h4>OS:</h4>
-          <p>Mac</p>
+          <p>{Platform.OS}</p>
         </div>
         <div className={styles.singleColumn}>
           <h4>Version:</h4>
-          <p>1</p>
+          <p>{Platform.OSVersion}</p>
         </div>
         <div className={styles.singleColumn}>
           <h4>Bit-version:</h4>
-          <p>1</p>
+          <p>32 bit / 64 bit</p>
         </div>
       </div>
     </main>

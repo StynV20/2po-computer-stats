@@ -10,7 +10,16 @@
   .singleColumn {
     @media (min-width: 768px) {
       min-height: 120px;
+
+      &.noTitle {
+        min-height: 20px;
+      }
     }
+
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
+
     flex: 1 1 calc(33.333% - 30px);
     padding-left: 20px;
     border-left: 1px solid black;
@@ -18,9 +27,20 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    @media (max-width: 768px) {
+      gap: 0.5rem;
+    }
 
     &.hidden {
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       visibility: hidden;
+      margin: 0px;
+      padding: 0px;
+      height: 0px;
+      width: 0px;
     }
 
     h4,

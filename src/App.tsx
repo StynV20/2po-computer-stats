@@ -2,12 +2,19 @@ import styles from "./App.module.scss";
 import Columns from "./components/Columns";
 import Platform from "react-platform-js";
 import getOSBitVersion from "./utils/getOSBitVersion";
+import { useEffect, useState } from "react";
 
 function App() {
   const screenWidth = window.screen.width;
   const screenHeight = window.screen.height;
 
   const { innerWidth: width, innerHeight: height } = window;
+
+  const [jsEnabled, setJsEnabled] = useState(false);
+
+  useEffect(() => {
+    setJsEnabled(true);
+  }, []);
 
   return (
     <main className={styles.root}>
@@ -48,8 +55,17 @@ function App() {
         </div>
       </section>
 
-      <h2>Color Depth</h2>
-      <Columns firstValue={`${window.screen.colorDepth} bits`} />
+      <section className={styles.oneLine}>
+        <div>
+          <h2>Color Depth</h2>
+          <Columns firstValue={`${window.screen.colorDepth} bits`} />
+        </div>
+
+        <div>
+          <h2>Javascript enabled?</h2>
+          <Columns firstValue={jsEnabled} />
+        </div>
+      </section>
     </main>
   );
 }

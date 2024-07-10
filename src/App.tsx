@@ -47,6 +47,9 @@ function App() {
           <Columns firstTitle="Enabled?" firstValue={navigator.cookieEnabled} />
         </div>
       </section>
+
+      <h2>Color Depth</h2>
+      <Columns firstValue={`${window.screen.colorDepth} bits`} />
     </main>
   );
 }

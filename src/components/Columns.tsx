@@ -3,7 +3,7 @@ import styles from "./columns.module.scss";
 
 interface props {
   firstTitle?: string;
-  firstValue: string | boolean;
+  firstValue: string | boolean | number;
   secondTitle?: string;
   secondValue?: string;
   thirdTitle?: string;

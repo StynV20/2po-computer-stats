@@ -1,6 +1,7 @@
 import styles from "./App.module.scss";
 import Columns from "./components/Columns";
 import Platform from "react-platform-js";
+import getOSBitVersion from "./utils/getOSBitVersion";
 
 function App() {
   const screenWidth = window.screen.width;
@@ -19,7 +20,7 @@ function App() {
         secondTitle="Version:"
         secondValue={Platform.OSVersion}
         thirdTitle="Bit-version:"
-        thirdValue="32 bit / 64 bit"
+        thirdValue={getOSBitVersion()}
       />
 
       <h2>Web Browser</h2>

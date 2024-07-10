@@ -65,6 +65,11 @@ function App() {
           <h2>Javascript enabled?</h2>
           <Columns firstValue={jsEnabled} />
         </div>
+
+        <div>
+          <h2>Java enabled?</h2>
+          <Columns firstValue={window.navigator.javaEnabled()} />
+        </div>
       </section>
     </main>
   );

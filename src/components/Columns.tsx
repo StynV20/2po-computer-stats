@@ -3,7 +3,7 @@ import styles from "./columns.module.scss";
 
 interface props {
   firstTitle?: string;
-  firstValue: string;
+  firstValue: string | boolean;
   secondTitle?: string;
   secondValue?: string;
   thirdTitle?: string;
@@ -25,7 +25,7 @@ const Columns = ({
       })}
     >
       {firstTitle && <h4>{firstTitle}</h4>}
-      <p>{firstValue}</p>
+      <p>{firstValue.toString()}</p>
     </div>
 
     <div

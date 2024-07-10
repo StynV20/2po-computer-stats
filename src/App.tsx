@@ -30,11 +30,22 @@ function App() {
         secondValue={Platform.BrowserVersion}
       />
 
-      <h2>Screen Resolution</h2>
-      <Columns firstValue={`${screenWidth} x ${screenHeight}`} />
+      <section className={styles.oneLine}>
+        <div>
+          <h2>Screen Resolution</h2>
+          <Columns firstValue={`${screenWidth} x ${screenHeight}`} />
+        </div>
 
-      <h2>Browser Size</h2>
-      <Columns firstValue={`${width} x ${height}`} />
+        <div>
+          <h2>Browser Size</h2>
+          <Columns firstValue={`${width} x ${height}`} />
+        </div>
+
+        <div>
+          <h2>Cookies</h2>
+          <Columns firstTitle="Enabled?" firstValue={navigator.cookieEnabled} />
+        </div>
+      </section>
     </main>
   );
 }

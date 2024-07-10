@@ -85,6 +85,11 @@ function App() {
           <h2>IP Address</h2>
           <Columns firstValue={ipAddress} />
         </div>
+
+        <div>
+          <h2>Browser language</h2>
+          <Columns firstValue={navigator.language} />
+        </div>
       </section>
     </main>
   );

@@ -8,6 +8,7 @@ interface props {
   secondValue?: string;
   thirdTitle?: string;
   thirdValue?: string;
+  onlyFirstColumn?: boolean;
 }
 
 const Columns = ({
@@ -17,6 +18,7 @@ const Columns = ({
   secondValue,
   thirdTitle,
   thirdValue,
+  onlyFirstColumn,
 }: props) => (
   <div className={styles.columns}>
     <div
@@ -32,6 +34,7 @@ const Columns = ({
       className={classNames(styles.singleColumn, {
         [styles.noTitle]: !secondTitle,
         [styles.hidden]: !secondTitle && !secondValue,
+        [styles.gone]: onlyFirstColumn,
       })}
     >
       <h4>{secondTitle}</h4>
@@ -42,6 +45,7 @@ const Columns = ({
       className={classNames(styles.singleColumn, {
         [styles.noTitle]: !thirdTitle,
         [styles.hidden]: !thirdTitle && !thirdValue,
+        [styles.gone]: onlyFirstColumn,
       })}
     >
       <h4>{thirdTitle}</h4>

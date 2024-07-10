@@ -43,6 +43,10 @@
       width: 0px;
     }
 
+    &.gone {
+      display: none;
+    }
+
     h4,
     p {
       margin-top: 0;

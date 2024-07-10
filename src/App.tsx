@@ -3,6 +3,7 @@ import Columns from "./components/Columns";
 import Platform from "react-platform-js";
 import getOSBitVersion from "./utils/getOSBitVersion";
 import { useEffect, useState } from "react";
+import fetchIPAddress from "./utils/fetchIPAddress";
 
 function App() {
   const screenWidth = window.screen.width;
@@ -11,9 +12,16 @@ function App() {
   const { innerWidth: width, innerHeight: height } = window;
 
   const [jsEnabled, setJsEnabled] = useState(false);
-
   useEffect(() => {
     setJsEnabled(true);
+  }, []);
+
+  const [ipAddress, setIpAddress] = useState("");
+  useEffect(() => {
+    const getIpAddress = async () => {
+      setIpAddress(await fetchIPAddress());
+    };
+    getIpAddress();
   }, []);
 
   return (
@@ -69,6 +77,13 @@ function App() {
         <div>
           <h2>Java enabled?</h2>
           <Columns firstValue={window.navigator.javaEnabled()} />
+        </div>
+      </section>
+
+      <section className={styles.oneLine}>
+        <div>
+          <h2>IP Address</h2>
+          <Columns firstValue={ipAddress} />
         </div>
       </section>
     </main>

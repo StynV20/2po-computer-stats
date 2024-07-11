@@ -3,6 +3,7 @@ import Columns from "./components/Columns";
 import Platform from "react-platform-js";
 import getOSBitVersion from "./utils/getOSBitVersion";
 import fetchIPAddress from "./utils/fetchIPAddress";
+import { useDetectAdBlock } from "adblock-detect-react";
 import styles from "./App.module.scss";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
     };
     getIpAddress();
   }, []);
+
+  const detected = useDetectAdBlock();
 
   return (
     <main className={styles.root}>
@@ -106,6 +109,13 @@ function App() {
         <div>
           <h3>Browser layout engine</h3>
           <Columns firstValue={Platform.Engine} onlyFirstColumn />
+        </div>
+      </section>
+
+      <section className={styles.oneLine}>
+        <div>
+          <h3>Adblocker active?</h3>
+          <Columns firstValue={detected} onlyFirstColumn />
         </div>
       </section>
     </main>

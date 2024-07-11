@@ -8,27 +8,16 @@
   }
 
   .singleColumn {
-    @media (min-width: 768px) {
-      min-height: 120px;
-
-      &.noTitle {
-        min-height: 20px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      margin-bottom: 1rem;
-    }
-
     flex: 1 1 calc(33.333% - 30px);
     padding-left: 20px;
     border-left: 1px solid black;
 
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    @media (max-width: 768px) {
-      gap: 0.5rem;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    .value {
+      align-self: center;
     }
 
     &.hidden {

@@ -27,7 +27,7 @@ const Columns = ({
       })}
     >
       {firstTitle && <h4>{firstTitle}</h4>}
-      <p>{firstValue.toString()}</p>
+      <p className={styles.value}>{firstValue.toString()}</p>
     </div>
 
     <div
@@ -38,7 +38,7 @@ const Columns = ({
       })}
     >
       <h4>{secondTitle}</h4>
-      <p>{secondValue}</p>
+      <p className={styles.value}>{secondValue}</p>
     </div>
 
     <div
@@ -49,7 +49,7 @@ const Columns = ({
       })}
     >
       <h4>{thirdTitle}</h4>
-      <p>{thirdValue}</p>
+      <p className={styles.value}>{thirdValue}</p>
     </div>
   </div>
 );

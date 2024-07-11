@@ -64,12 +64,8 @@ function App() {
         </div>
 
         <div>
-          <h3>Cookies</h3>
-          <Columns
-            firstTitle="Enabled?"
-            firstValue={navigator.cookieEnabled}
-            onlyFirstColumn
-          />
+          <h3>Cookies enabled?</h3>
+          <Columns firstValue={navigator.cookieEnabled} onlyFirstColumn />
         </div>
       </section>
 

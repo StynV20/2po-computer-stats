@@ -25,6 +25,7 @@
     }
 
     line-height: 106%;
+    margin-top: 0rem;
     margin-bottom: 0px;
   }
 
@@ -59,6 +60,9 @@
   .oneLine {
     display: flex;
     flex-direction: row;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     justify-content: space-between;
   }
 }

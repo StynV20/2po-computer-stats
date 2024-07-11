@@ -27,9 +27,20 @@ function App() {
 
   const detected = useDetectAdBlock();
 
+  const [isMozBarEnabled, setIsMozBarEnabled] = useState(false);
+  useEffect(() => {
+    const check = () => {
+      const element = document.querySelector('iframe[class^="mozbar-"]');
+      if (element) setIsMozBarEnabled(true);
+    };
+
+    const timeout = setTimeout(check, 5000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <main className={styles.root}>
-      <h1>II.0 Services Portal</h1>
+      <h1>II.O Services Portal</h1>
 
       <h3>Operating System</h3>
       <Columns
@@ -112,6 +123,15 @@ function App() {
         <div>
           <h3>Adblocker active?</h3>
           <Columns firstValue={detected} onlyFirstColumn />
+        </div>
+
+        <div>
+          <h3>Active plugins</h3>
+          <Columns
+            firstTitle="Mozbar:"
+            firstValue={isMozBarEnabled}
+            onlyFirstColumn
+          />
         </div>
       </section>
     </main>
